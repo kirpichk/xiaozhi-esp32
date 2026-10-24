@@ -41,7 +41,7 @@ jobs:
           git config --global --add safe.directory "$GITHUB_WORKSPACE"
           CHANGED_FILE="$RUNNER_TEMP/changed-files.txt"
           if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
-            git ls-files > "$CHANGED_FILE"
+            echo "main/boards/waveshare/esp32-p4-wifi6-touch-lcd/esp32-p4-wifi6-touch-lcd.cc" > "$CHANGED_FILE"
           elif [[ "$EVENT_NAME" == "pull_request" ]]; then
             # Checkout is the synthetic merge commit. Compare the PR branch
             # from its merge base, excluding unrelated updates on main.
